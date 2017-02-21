@@ -64,15 +64,15 @@ public class SpinnerPopupWindow {
 
     private void initParams(Builder b){
         this.mContext = b.mContext;
-         mLayoutManager = b.mLayoutManager;
-         mItemDecoration = b.mItemDecoration;
-         mItemAnimato = b.mItemAnimato;
-         mAdapter = b.mAdapter;
-         isFocusable = b.isFocusable;
-         isOutsideTouchable = b.isOutsideTouchable;
-         mDrawable = b.mDrawable;
-         mWidth = b.mWidth;
-         mHeight = b.mHeight;
+        mLayoutManager = b.mLayoutManager;
+        mItemDecoration = b.mItemDecoration;
+        mItemAnimato = b.mItemAnimato;
+        mAdapter = b.mAdapter;
+        isFocusable = b.isFocusable;
+        isOutsideTouchable = b.isOutsideTouchable;
+        mDrawable = b.mDrawable;
+        mWidth = b.mWidth;
+        mHeight = b.mHeight;
     }
 
 
@@ -143,15 +143,14 @@ public class SpinnerPopupWindow {
         int[] point = {0,0};
         v.getLocationOnScreen(point);
         //v距离左边的位置 - 弹框的宽度一半，弹框处于v的左边 超出v的宽度的一半
-        mPopWindow.showAtLocation(view,Gravity.TOP| Gravity.LEFT, point[0] - mWidth / 2 + v.getWidth() / 2, point[1] + view.getHeight() + v.getHeight());
+        mPopWindow.showAtLocation(view,Gravity.TOP| Gravity.LEFT, point[0] - mWidth / 2 + v.getWidth() / 2, point[1] + v.getHeight());
     }
 
     /**
      * 隐藏Pop
      */
     public void dismissPopWindow(){
-        if(mPopWindow.isShowing())
-            mPopWindow.dismiss();
+        mPopWindow.dismiss();
     }
 
     public boolean isShowing(){
